@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminModule } from './features/admin/admin-module';
+import { MainLayout } from './layout/main-layout/main-layout';
 
 
 const routes: Routes = [
@@ -59,8 +60,21 @@ const routes: Routes = [
       loadChildren:() =>
       import('./features/ticket/ticket-module')
       .then(m => m.TicketModule)
-    }
+    },
+    // route racine de l'application
+   {path:'', component:MainLayout,
+    children:[
+      {path:'dashboard', loadChildren:() => import('./features/admin/admin-module').then(m => m.AdminModule)},
+      {path:'members', loadChildren:() => import('./features/members/members-module').then(m => m.MembersModule)},
+      {path:'finance', loadChildren:() => import('./features/finance/finance-module').then(m => m.FinanceModule)}
+    ]
+   },
+
+   {path:'login', loadChildren: () => import('./features/auth/auth-module').then(m => m.AuthModule)},
+   // Route par défaut
+   {path:'**', redirectTo:'/dashboard'} 
   ];
+ 
 
 
 @NgModule({
