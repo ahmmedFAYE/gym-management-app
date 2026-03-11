@@ -1,15 +1,17 @@
-.layout-wrapper {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
+.layout-wrapper{
+  display:flex;
+  flex-direction:column;
+  height:100vh;
 }
 
-.main {
-  display: flex;
-  flex: 1;
+.main{
+  display:flex;
+  flex:1;
 }
 
-.content {
-  flex: 1;
-  padding: 20px;
+.content{
+  flex:1;
+  padding:30px;
+  background:#1e293b;
+  overflow:auto;
 }

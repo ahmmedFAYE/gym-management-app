@@ -71,7 +71,7 @@ const routes: Routes = [
    },
 
    {path:'login', loadChildren: () => import('./features/auth/auth-module').then(m => m.AuthModule)},
-   // Route par défaut
+   // Route par défaut (wild card route)
    {path:'**', redirectTo:'/dashboard'} 
   ];
  
