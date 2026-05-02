@@ -1,23 +1,23 @@
 .navbar{
-  height:60px;
-  background:#020617;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:0 25px;
-  border-bottom:1px solid #1e293b;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px ;
+    background:rgb(14, 13, 13);
 }
 
-.logo{
-  font-size:18px;
-  font-weight:600;
-  color:#38bdf8;
+.navbar .logo a{
+    text-decoration: none;
+    color:rgb(63, 202, 218);
+    font-weight: 200;
+
 }
 
-a{
-  background:#38bdf8;
-  padding:6px 12px;
-  border-radius:20px;
-  font-size:14px;
-  color:black;
+.navbar .logo a:hover{
+    color:rgb(83, 113, 142);
 }
+
+.navbar .nav-links a{
+    color:rgb(63, 202, 218);
+}
+
