@@ -1,33 +1,27 @@
 .sidebar{
-    padding:10px 15px;
-    background: rgb(30, 60, 85);
-    display: flex;
-    
+    background: #90c2d3;
+    text-align: center;
+    padding: 20px;
+    height: 100%;        /* ✅ remplace min-height: 80vh */
+    overflow-y: auto;    /* ✅ scroll vertical propre */
 }
-
-.sidebar ul {
+.sidebar ul{
     list-style-type: none;
-    
+    padding: 0;
 }
-
 .sidebar ul li{
-    padding:15px 5px;
-    justify-content: center;
-    align-items: center;
-}
-
-.sidebar ul li:hover{
-    background: rgb(179, 245, 240);
-    padding: 10px 15px;
-    
+    padding: 20px 20px;
 }
 .sidebar ul li a{
     text-decoration: none;
-    color: whitesmoke;
-    transition: 0.1s;
-    margin-right: 15px;
+    color:rgb(243, 244, 245);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: larger;
+    transition: background 0.3s ease, color 0.3s ease;
+    padding: 15px;
 }
 .sidebar ul li a:hover{
-    color:rgb(28, 110, 126);
-    
+    color: #238389;
+    background: #dbe1e3;
+    border-radius:10px;
 }

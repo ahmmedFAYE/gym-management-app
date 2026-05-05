@@ -1,21 +1,16 @@
 .layout-wrapper{
-  height: 100vh;
-  display:flex;
-  flex-direction: column;
+    display:flex;
+    flex-direction: column;
+    height: 100vh;
 }
-
 .main{
     display:flex;
     flex:1;
+    min-height: 0; 
 }
-
-
 
 .content{
-    flex:1;
     overflow: auto;
-    background: #1e293b;
+    flex:1;
+    background: #3e6774;
 }
-
-
-

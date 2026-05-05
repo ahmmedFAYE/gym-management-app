@@ -1,23 +1,24 @@
 .navbar{
     display: flex;
     justify-content: space-between;
+    padding:  20px;
+    background: #37a0c3;
     align-items: center;
-    padding: 12px ;
-    background:rgb(14, 13, 13);
 }
-
-.navbar .logo a{
+.navbar .logo a {
     text-decoration: none;
-    color:rgb(63, 202, 218);
-    font-weight: 200;
-
+    font-size: larger;
+    color: aliceblue;
 }
 
 .navbar .logo a:hover{
-    color:rgb(83, 113, 142);
+    color: #8ed1e8;
 }
 
 .navbar .nav-links a{
-    color:rgb(63, 202, 218);
+    color:aliceblue;
 }
 
+.navbar .nav-links a:hover{
+    color: #8ed1e8;
+}
