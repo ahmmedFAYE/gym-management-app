@@ -1,21 +1,22 @@
-export interface User{
-    userId:string;
+export interface User {
     firstName:string;
     lastName:string;
     email:string;
-    role:'admin'|'member'|'coach'|'cashier';
-    permissions:string[];
-    gymId:string;
+    password:string;
+    role:'superadmin'|'admin'|'coach'|'member'|'cashier';
     avatar?:string;
+    userId:string;
+    gymId:string;
+    permissions:string [];
 }
 
-export interface AuthResponse{
+export interface AuthReponse{
     user:User;
-    accessToken:string;
+    accesToken:string;
     refreshToken:string;
 }
 
-export interface LoginCredentials{
+export interface AuthCredentials{
     email:string;
     password:string;
 }
