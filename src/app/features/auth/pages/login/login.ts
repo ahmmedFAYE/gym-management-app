@@ -4,7 +4,8 @@ import { FormGroup, FormBuilder, FormControl, Validator, Validators } from "@ang
   selector:'app-login',
   standalone:false,
   templateUrl:'./login.html',
-  styleUrls:['./login.css']
+  styleUrls:[
+    './login.css']
 })
 export class Login implements OnInit{
 
