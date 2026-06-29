@@ -1,124 +1,125 @@
-/* ==========================================================================
-   VARIABLES GLOBALES (Pour changer les couleurs facilement plus tard)
-   ========================================================================== */
-:root {
-    --primary-color: #2563eb;       /* Bleu moderne */
-    --primary-hover: #1d4ed8;       /* Bleu plus foncé au survol */
-    --background-app: #f1f5f9;      /* Fond de l'application gris très clair */
-    --surface-card: #ffffff;        /* Fond du formulaire (Blanc) */
-    --text-main: #1e293b;           /* Couleur du texte principal */
-    --text-muted: #64748b;          /* Couleur du texte secondaire */
-    --border-color: #cbd5e1;        /* Couleur des bordures des inputs */
-    --error-color: #dc2626;         /* Rouge vif pour les erreurs */
-    --error-bg: #fef2f2;            /* Fond léger rouge pour les messages d'erreur */
+/* ===== LOGIN PAGE ===== */
+
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
 }
 
-/* ==========================================================================
-   CONTENEUR PRINCIPAL & CARTE DE CONNEXION
-   ========================================================================== */
 .login-container {
-    max-width: 420px;
-    margin: 60px auto;
-    padding: 40px;
-    background-color: var(--surface-card);
-    border-radius: 12px;
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  position: relative;
+  z-index: 1;
+  background: rgba(15, 15, 20, 0.75);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 52px 48px;
+  width: 100%;
+  max-width: 440px;
+  box-shadow:
+    0 32px 80px rgba(0, 0, 0, 0.55),
+    0 0 0 1px rgba(255, 255, 255, 0.04) inset;
 }
+
+/* ── Header ── */
 
 .login-container h2 {
-    margin: 0 0 8px 0;
-    color: var(--text-main);
-    font-size: 28px;
-    font-weight: 700;
-    text-align: center;
+  margin: 0 0 6px;
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: #ffffff;
+  text-transform: uppercase;
 }
 
 .login-container p {
-    margin: 0 0 32px 0;
-    color: var(--text-muted);
-    font-size: 15px;
-    text-align: center;
+  margin: 0 0 36px;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.45);
+  letter-spacing: 0.3px;
 }
 
-/* ==========================================================================
-   CHAMPS DE SAISIE (INPUTS) & LABELS
-   ========================================================================== */
+/* ── Form groups ── */
+
 .form-group {
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 22px;
 }
 
 .form-group label {
-    margin-bottom: 6px;
-    color: var(--text-main);
-    font-size: 14px;
-    font-weight: 600;
-    text-transform: capitalize; /* Met automatiquement la première lettre en majuscule */
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .form-group input {
-    padding: 12px 16px;
-    font-size: 15px;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    background-color: #fff;
-    color: var(--text-main);
-    transition: all 0.2s ease-in-out;
-    outline: none;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1.5px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 14px 16px;
+  font-size: 0.95rem;
+  color: #ffffff;
+  outline: none;
+  transition: border-color 0.25s, background 0.25s, box-shadow 0.25s;
+  caret-color: #f97316;
 }
 
-/* Effet quand on clique dans un champ (Focus) */
+.form-group input::placeholder {
+  color: rgba(255, 255, 255, 0.2);
+}
+
 .form-group input:focus {
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
+  border-color: #f97316;
+  background: rgba(249, 115, 22, 0.08);
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.18);
 }
 
-/* ==========================================================================
-   GESTION DYNAMIQUE DES ERREURS
-   ========================================================================== */
+/* ── Error messages ── */
+
 .error-messages {
-    margin-top: 6px;
-    padding: 8px 12px;
-    background-color: var(--error-bg);
-    border-left: 3px solid var(--error-color);
-    border-radius: 4px;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .error-messages span {
-    color: var(--error-color);
-    font-size: 13px;
-    line-height: 1.4;
-    font-weight: 500;
+  font-size: 0.75rem;
+  color: #fb7185;
+  font-weight: 500;
 }
 
-/* ==========================================================================
-   BOUTON DE SOUMISSION
-   ========================================================================== */
+/* ── Submit button ── */
+
 .btn-submit {
-    width: 100%;
-    margin-top: 12px;
-    padding: 14px;
-    background-color: var(--primary-color);
-    color: #ffffff;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.2s ease-in-out, transform 0.1s ease;
+  margin-top: 10px;
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
+  box-shadow: 0 6px 24px rgba(249, 115, 22, 0.45);
 }
 
-/* Effet au survol du bouton */
 .btn-submit:hover {
-    background-color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 32px rgba(249, 115, 22, 0.6);
 }
 
-/* Effet au clic sur le bouton */
 .btn-submit:active {
-    transform: scale(0.98);
+  transform: translateY(0);
+  opacity: 0.9;
 }
