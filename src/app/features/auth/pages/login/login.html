@@ -1,31 +1,30 @@
 <div class="login-container">
     <h2>Connexion</h2>
-    <p>votre espace Gym-Management</p>
+    <p>Accédez à votre espace Gym-management</p>
     <form [formGroup]="LoginForm" (ngSubmit)="onSubmit()">
-        <!--Champ email-->
+        <!--champ email-->
         <div class="form-group">
-            <label for="email">Email:</label>
+            <label for="email">email:</label>
             <input type="email" id="email" formControlName="email" placeholder="exemple@gym.com">
-            <!--Les messages d'erreurs-->
+            <!--Gestion des messages d'erreurs-->
             <div class="error-messages" *ngIf="emailControl?.invalid && emailControl?.touched">
                 <span *ngIf="emailControl?.hasError('required')">L'email est obligatoire.</span>
                 <span *ngIf="emailControl?.hasError('pattern')">Le format de l'email n'est pas valide.</span>
             </div>
         </div>
-        <!--Champ mot de passe-->
+         <!--champ password-->
         <div class="form-group">
-            <label for="password">Mot de passe:</label>
-            <input type="password" id="password" formControlName="password" placeholder="••••••••••••">
+            <label for="email">Mot de passe:</label>
+            <input type="password" id="password" formControlName="password" placeholder="•••••••••••">
+            <!--Gestion des messages d'erreurs-->
             <div class="error-messages" *ngIf="passwordControl?.invalid && passwordControl?.touched">
                 <span *ngIf="passwordControl?.hasError('required')">Le mot de passe est obligatoire.</span>
-                <span *ngIf="passwordControl?.hasError('pattern')">
-                    Le mot de passe doit faire entre 12 et 15 caractères et inclure au moins une majuscule, 
+                <span *ngIf="emailControl?.hasError('pattern')">
+                     Le mot de passe doit faire entre 12 et 15 caractères et inclure au moins une majuscule, 
                     une minuscule, un chiffre et un caractère spécial (@$!%*?&).
                 </span>
             </div>
         </div>
-        <button type="submit" class="btn-submit">
-            se connecter
-        </button>
+        <button type="submit" class="btn-submit">Se connecter</button>
     </form>
 </div>
