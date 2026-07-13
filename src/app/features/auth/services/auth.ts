@@ -11,12 +11,12 @@ export class AuthService{
   private urlAPI:string = '';
 
   // Création de notre BehaviorSubject en private pour que seule le service puisse modifier son état avec next().
-  public membreConnecteSubject = new BehaviorSubject<User|null>(null);
+  private membreConnecteSubject = new BehaviorSubject<User|null>(null);
 
   // Rendons le BehaviorSubject en Observable public pour que les autres composants
   // puissent recevoir les infos de la personne connecté
 
-  private membreConnecte$ : Observable<User|null> = this.membreConnecteSubject.asObservable();
+  public membreConnecte$ : Observable<User|null> = this.membreConnecteSubject.asObservable();
 
   // Injectons le HttpClient dans le constructor car c'est lui qui nous permet de communiquer avec le serveur
   constructor(private http:HttpClient){}

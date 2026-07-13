@@ -2,7 +2,8 @@ import { Component, OnInit } from "@angular/core";
 import {  ReactiveFormsModule, FormGroup, FormBuilder, FormControl,  Validators } from "@angular/forms";
 // importation du service Auth
 import {AuthService} from '../../services/auth';
-// importation de
+// importation de Router pour la redirection
+import { Router } from "@angular/router";
 @Component({
   selector:'app-login',
   standalone:false,
@@ -21,7 +22,9 @@ export class Login implements OnInit{
   // injection des dépendances dans le constructor
   constructor(
     private fb:FormBuilder,
-    private auth:AuthService
+    private auth:AuthService,
+    // injection du Router
+    private router:Router
   ){}
 
   // création de notre méthode ngOninit()
@@ -57,6 +60,7 @@ export class Login implements OnInit{
       // méthode next si la connexion est réussie
       next:(reponse) => {
         console.log("Bravo, vous êtes connecté !",reponse);
+        this.router.navigate(['/home']);
       },
       // methode erreur pour les erreurs de connexions
       error:(erreur) => {
