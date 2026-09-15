@@ -8,10 +8,9 @@ import { Navbar } from './layout/navbar/navbar';
 import { Sidebar } from './layout/sidebar/sidebar';
 import { Footer } from './layout/footer/footer';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HomeComponent } from './feautures/auth/pages/home/home-component/home-component';
 
 @NgModule({
-  declarations: [App, MainLayout, Navbar, Sidebar, Footer, HomeComponent],
+  declarations: [App, MainLayout, Navbar, Sidebar, Footer],
   imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
   providers: [provideBrowserGlobalErrorListeners()],
   bootstrap: [App],

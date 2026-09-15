@@ -12,7 +12,7 @@ export interface User {
 
 export interface AuthReponse{
     user:User;
-    accesToken:string;
+    accessToken:string;
     refreshToken:string;
 }
 
